@@ -62,6 +62,7 @@ body{
 .bigpicture-content ul li {
     float: left;
     width: calc(100% /3);
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
