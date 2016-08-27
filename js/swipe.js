@@ -2,14 +2,15 @@ function a() {
     var el = document.getElementById('iSlider');
     console.log(el.childNodes[1]);
     var ham = new Hammer.Manager(el);
-    ham.add(new Hammer.Pan({ threshold: 0 }));
+    ham.add(new Hammer.Pan({ threshold: 10 }));
     ham.add(new Hammer.Pinch());
-    ham.on('pan panend', onPan);
+    ham.on('panstart panmove', onPan);
     ham.on('pinch', onPinch);
     var transX = 0;
-    index = 0;
+    var index = 0;
 
     function onPan(ev) {
+        
         if (ev.type = 'panend') {
             console.log(transX);
             if (transX > 10) {
@@ -22,12 +23,13 @@ function a() {
                     index -=1;
                 }
             }
-            el.childNodes[1].style.transform = 'translate('+index*340+'px, 0px)';
+            // el.childNodes[1].style.transform = 'translate('+index*340+'px, 0px)';
+            // transX = 0;
         }
         // console.log(ev);
-        console.log(ev.velocityX);
-        transX += ev.velocityX;
-        el.childNodes[1].style.transform = 'translate('+transX*30+'px, 0px)';
+        console.log(ev);
+        transX += ev.deltaX;
+        el.childNodes[1].style.transform = 'translate('+transX+'px, 0px)';
     };
     var initScale = 1;
     function onPinch(ev) {
