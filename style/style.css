@@ -46,7 +46,28 @@ body{
     color: #fff;
     position: relative;
 }
+
 .bigpicture-content {
     height: 100%;
     top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.bigpicture-content ul{
+    height: 100%;
+    top: 0;
+    position: absolute;
+};
+.bigpicture-content ul li {
+    width: 100px;
+}
+.bigpicture-content ul li img {
+    width: 100%;
+}
+
+.bigpicture-footer {
+        background: rgba(0, 0 , 0, 0.5);
+        position: fixed;
+        bottom: 0;
+        color: #fff;
 }
