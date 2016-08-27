@@ -63,10 +63,18 @@ body{
     float: left;
     width: calc(100% /3);
     overflow: hidden;
+    position: relative;
 }
-.bigpicture-content ul li img {
+.bigpicture-content ul li .img-holder {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+}
+.bigpicture-content ul li .img-holder img{
     width: 100%;
 }
+
 
 .bigpicture-footer {
         background: rgba(0, 0 , 0, 0.5);
