@@ -12,6 +12,6 @@ function a() {
         // console.log(ev);
         console.log(ev.velocityX);
         transX += ev.velocityX;
-        el.childNodes[1].style.transform = 'translate('+transX*20+'px, 0px)';
+        el.childNodes[1].style.transform = 'translate('+transX*100+'px, 0px)';
     }
 }
