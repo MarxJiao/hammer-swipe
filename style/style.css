@@ -61,6 +61,7 @@ body{
 .bigpicture-content ul li {
     float: left;
     width: 100px;
+    overflow: hidden;
 }
 .bigpicture-content ul li img {
     width: 100%;
