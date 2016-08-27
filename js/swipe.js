@@ -27,7 +27,7 @@ function a() {
         // console.log(ev);
         console.log(ev.velocityX);
         transX += ev.velocityX;
-        el.childNodes[1].style.transform = 'translate('+transX*100+'px, 0px)';
+        el.childNodes[1].style.transform = 'translate('+transX*30+'px, 0px)';
     };
     var initScale = 1;
     function onPinch(ev) {
