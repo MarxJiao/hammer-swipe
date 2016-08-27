@@ -1,0 +1,52 @@
+/* ********************************************************************************************** */
+/* **************************************全局样式************************************************* */
+/* ********************************************************************************************** */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+button,
+input,
+textarea,
+th,
+td,
+button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*开始*/
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.bigpicture-holder {
+    height: 100%;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+.bigpicture-content {
+    height: 100%;
+    top: 0;
+}
