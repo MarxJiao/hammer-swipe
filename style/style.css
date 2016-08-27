@@ -41,7 +41,10 @@ body{
     width: 340px;
     overflow: hidden;
 }
-
+.animation {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
 .bigpicture-holder {
     height: 100%;
     background: #000;
