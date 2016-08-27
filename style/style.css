@@ -59,6 +59,7 @@ body{
     position: absolute;
 };
 .bigpicture-content ul li {
+    float: left;
     width: 100px;
 }
 .bigpicture-content ul li img {
