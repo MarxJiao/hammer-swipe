@@ -2,7 +2,7 @@ function a() {
     var el = document.getElementById('iSlider');
     console.log(el.childNodes[1]);
     var ham = new Hammer.Manager(el);
-    ham.add(new Hammer.Pan({ threshold: 0 }));
+    ham.add(new Hammer.Pan({ threshold: 1 }));
     ham.add(new Hammer.Pinch());
     ham.on('pan panend', onPan);
     ham.on('pinch', onPinch);
