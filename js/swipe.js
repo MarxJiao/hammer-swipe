@@ -32,8 +32,8 @@ function a() {
         else {
             // console.log(ev);
             console.log(ev);
-            
-            el.childNodes[1].style.transform = 'translate('+ev.deltaX+'px, 0px)';
+            var a = ev.deltaX+index*(-340);
+            el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
             transX = ev.deltaX;
 
         }
