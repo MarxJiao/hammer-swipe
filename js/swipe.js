@@ -28,7 +28,7 @@ function a() {
         }
         // console.log(ev);
         console.log(ev);
-        transX += ev.deltaX;
+        transX += ev.deltaX/2;
         el.childNodes[1].style.transform = 'translate('+transX+'px, 0px)';
     };
     var initScale = 1;

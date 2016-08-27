@@ -284,3 +284,15 @@
 127.0.0.1 - GET /js/swipe.js HTTP/1.1 200 1215 - 1.849 ms
 127.0.0.1 - GET /img/img1.jpg HTTP/1.1 200 6269 - 0.650 ms
 127.0.0.1 - GET /js/hammer.min.js.map HTTP/1.1 404 33 - 0.809 ms
+127.0.0.1 - GET / HTTP/1.1 200 4068 - 1.873 ms
+127.0.0.1 - GET /style/style.css HTTP/1.1 200 1398 - 3.573 ms
+127.0.0.1 - GET /js/hammer.min.js HTTP/1.1 200 20765 - 11.476 ms
+127.0.0.1 - GET /js/swipe.js HTTP/1.1 200 1217 - 1.320 ms
+127.0.0.1 - GET /img/img1.jpg HTTP/1.1 200 6269 - 0.968 ms
+127.0.0.1 - GET /js/hammer.min.js.map HTTP/1.1 404 33 - 0.591 ms
+127.0.0.1 - GET / HTTP/1.1 200 4068 - 0.518 ms
+127.0.0.1 - GET /style/style.css HTTP/1.1 200 1398 - 1.775 ms
+127.0.0.1 - GET /js/hammer.min.js HTTP/1.1 200 20765 - 1.382 ms
+127.0.0.1 - GET /js/swipe.js HTTP/1.1 200 1217 - 1.592 ms
+127.0.0.1 - GET /img/img1.jpg HTTP/1.1 200 6269 - 0.479 ms
+127.0.0.1 - GET /js/hammer.min.js.map HTTP/1.1 404 33 - 0.325 ms
