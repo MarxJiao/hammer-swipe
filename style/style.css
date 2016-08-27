@@ -42,8 +42,8 @@ body{
     overflow: hidden;
 }
 .animation {
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
 }
 .bigpicture-holder {
     height: 100%;
