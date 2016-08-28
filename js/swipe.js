@@ -122,8 +122,8 @@ function a() {
             if (ev.type == 'pinchend') {
                 if (imgTransform.scale < 1) {
                     ev.target.className = 'animation';
-                    ev.target.style.transform = 'scale(1,1)';
-                    initScale = 1;
+                    imgTransform.scale = 1;
+                    updateImgTransform(ev.target);
                 }
                 setTimeout(function () {
                     pinching = 0;
