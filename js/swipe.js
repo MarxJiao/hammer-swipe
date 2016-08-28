@@ -59,10 +59,11 @@ function a() {
     var startImgX = 0;
     var startImgY = 0;
     function onPan(ev) {
-        if (pinching) {
-            return;
-        }
-        if (initScale>1) {
+        // if (pinching) {
+        //     imgTransform.translate.x = 
+        //     return;
+        // }
+        if (imgTransform.scale>1) {
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
             startImgX =imgTransform.translate.x;
@@ -119,7 +120,7 @@ function a() {
             if (ev.type == 'pinchend') {
                 
                 setTimeout(function () {
-                    pinching = 0;
+                    pinching = 1;
                     ev.target.className = '';
                 },100);
             }
