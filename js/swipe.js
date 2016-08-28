@@ -99,7 +99,8 @@ function a() {
         }
         else {
             // console.log(ev);
-            holderTransform.translate.x += ev.deltaX;
+            console.log(ev);
+            holderTransform.translate.x = ev.deltaX+index*(-340);;
             updateElementTransform()
             // el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
             transX = ev.deltaX;
