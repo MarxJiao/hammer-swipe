@@ -93,7 +93,7 @@ function a() {
             alert('index :'+index)
             alert('x:' + holderTransform.translate.x);
             updateElementTransform();
-
+            alert('x2:' + holderTransform.translate.x);
             imgTransform = {
                 translate: { x: 0, y: 0 },
                 scale: 1,
