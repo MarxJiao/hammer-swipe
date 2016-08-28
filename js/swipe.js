@@ -92,18 +92,19 @@ function a() {
             el.childNodes[1].className = '';
             if (ev.type == 'panend') {
                 console.log(transX);
+                _index = index;
                 if (ev.deltaX >50) {
                     if (index != 0){
                         index -=1;
                     }
                     
                 }
-                else if (ev.deltaX < -50) {
+                if (ev.deltaX < -50) {
                     if (index != 2) {
                         index +=1;
                     }
                 }
-                else {
+                if (_index == index) {
                     return;
                 }
                 el.childNodes[1].className = 'animation';
