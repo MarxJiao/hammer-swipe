@@ -64,7 +64,6 @@ function a() {
                     ev.target.style.transform = 'scale(1,1)';
                     initScale = 1;
                 }
-
                 setTimeout(function () {
                     pinching = 0;
                 },10);
