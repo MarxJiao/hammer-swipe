@@ -53,7 +53,7 @@ function a() {
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
             pinching = 1;
-            el.childNodes[1].className = '';
+            ev.target.className = '';
             console.log(ev);
             initScale *=ev.scale;
             ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
