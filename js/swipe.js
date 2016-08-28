@@ -14,7 +14,8 @@ function a() {
             return;
         }
         if (initScale>1) {
-            ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)'
+            ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)';
+            return;
         }
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
