@@ -73,6 +73,7 @@ function a() {
             }
             if (startX * imgTransform.scale <= ev.center.x) {
                 pinching=0;
+                return;
             }
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
