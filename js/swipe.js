@@ -72,11 +72,11 @@ function a() {
                 startY = ev.center.y;
                 imgTransform.scale
             }
-            // if (startX * imgTransform.scale - startX >= ev.deltaX 
-            //     || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -ev.deltaX) {
-            //     pinching=0;
-            //     return;
-            // }
+            if (startX * imgTransform.scale - startX <= ev.deltaX 
+                || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -ev.deltaX) {
+                pinching=0;
+                return;
+            }
             imgTransform.translate.x = ev.deltaX + startImgX;
             // imgTransform.translate.y = ev.deltaY + startImgY;
             // startImgX =imgTransform.translate.x;
