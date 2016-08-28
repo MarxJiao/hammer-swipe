@@ -5,7 +5,6 @@ function a() {
     ham.add(new Hammer.Pan({ threshold: 1 }));
     ham.add(new Hammer.Pinch()).dropRecognizeWith(ham.get('pan'));
     ham.on('pan panend', onPan);
-    ham.on('pinch', onPinch);
     var transX = 0;
     var index = 0;
     function onPan(ev) {
@@ -42,6 +41,8 @@ function a() {
 
     var img = document.querySelectorAll('img')[0];
     var imgham = new Hammer.Manager(el);
+    imgham.add(new Hammer.Pinch()).dropRecognizeWith(imgham.get('pan'));
+    imgham.on('pinch', onPinch);
     var initScale = 1;
     function onPinch(ev) {
         el.childNodes[1].className = '';
