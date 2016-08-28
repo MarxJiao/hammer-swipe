@@ -99,7 +99,7 @@ function a() {
             transX = 0;
         }
         else {
-            holderTransform.translate.x = ev.deltaX;
+            holderTransform.translate.x = ev.deltaX + index*(-340);
             updateElementTransform()
         }
         
