@@ -97,7 +97,9 @@ function a() {
             // console.log(ev);
             console.log(ev);
             var a = ev.deltaX+index*(-340);
-            el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
+            holderTransform.translate.x = a;
+            updateElementTransform()
+            // el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
             transX = ev.deltaX;
 
         }
