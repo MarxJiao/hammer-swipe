@@ -69,6 +69,7 @@ function a() {
             imgTransform.translate.y = ev.deltaY + startImgY;
             startImgX =imgTransform.translate.x;
             startImgY =imgTransform.translate.y;
+            alert(ev.target);
             updateImgTransform(ev.target);
             return;
         }
