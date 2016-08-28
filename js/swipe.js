@@ -120,16 +120,16 @@ function a() {
             console.log(ev);
             // initScale = ev.scale;
             // alert(initScale);
-            if (ev.type == 'pinchout'){
+            // if (ev.type == 'pinchout'){
                 if(imgTransform.scale >= 3){
                     imgTransform.scale = 3;
                 }
-            }
-            else if (ev.type == 'pinchin'){
+            // }
+            // else if (ev.type == 'pinchin'){
                 if (imgTransform.scale <= 0.5){
                     imgTransform.scale = 0.5;
                 }
-            }
+            // }
             else {
                     imgTransform.scale *= ev.scale;
                 // imgTransform.scale = ev.scale;
