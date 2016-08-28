@@ -59,16 +59,16 @@ function a() {
             ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
 
             if( ev.type == 'pinchend') {
+                if (initScale < 1) {
+                    ev.target.className = 'animation';
+                    ev.target.style.transform = 'scale(1,1)';
+                }
+
                 setTimeout(function () {
                     pinching = 0;
                 },10);
                 
             }
         }
-        
-        // el.className = '';
-        // initScale *= 
-        // transform.scale = initScale * ev.scale;
-        // el.childNodes[1].style.transform = 'scale()'
     }
 }
