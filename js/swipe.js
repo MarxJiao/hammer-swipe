@@ -59,7 +59,10 @@ function a() {
             ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
 
             if( ev.type == 'pinchend') {
-                pinching = 0;
+                setTimeout(function () {
+                    pinching = 0;
+                },0);
+                
             }
         }
         
