@@ -524,3 +524,9 @@
 127.0.0.1 - GET /js/hammer.min.js HTTP/1.1 200 20765 - 3.777 ms
 127.0.0.1 - GET /img/img1.jpg HTTP/1.1 200 6269 - 1.551 ms
 127.0.0.1 - GET /js/hammer.min.js.map HTTP/1.1 404 33 - 0.860 ms
+127.0.0.1 - GET / HTTP/1.1 200 4276 - 0.629 ms
+127.0.0.1 - GET /style/style.css HTTP/1.1 200 1488 - 4.254 ms
+127.0.0.1 - GET /js/swipe.js HTTP/1.1 200 4369 - 3.416 ms
+127.0.0.1 - GET /js/hammer.min.js HTTP/1.1 200 20765 - 4.928 ms
+127.0.0.1 - GET /img/img1.jpg HTTP/1.1 200 6269 - 1.304 ms
+127.0.0.1 - GET /js/hammer.min.js.map HTTP/1.1 404 33 - 0.624 ms
