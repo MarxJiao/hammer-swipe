@@ -106,6 +106,7 @@ function a() {
                 }
                 if (_index == index) {
                     if (index == 0 || index == 2) {
+                        holder.className = 'animation';
                         holderTransform.translate.x = index*(-340);
                         updateElementTransform();
                     }
