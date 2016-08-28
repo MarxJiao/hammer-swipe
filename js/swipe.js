@@ -6,9 +6,13 @@ function a() {
     ham.add(new Hammer.Pinch()).dropRecognizeWith(ham.get('pan'));
     ham.on('pan panend', onPan);
     ham.on('pinch', onPinch);
+    var pinching = 0;
     var transX = 0;
     var index = 0;
     function onPan(ev) {
+        if (pinching) {
+            return;
+        }
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
             console.log(transX);
@@ -48,6 +52,7 @@ function a() {
     var initScale = 1;
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
+            pinching = 1;
             el.childNodes[1].className = '';
             console.log(ev);
             initScale *=ev.scale;
