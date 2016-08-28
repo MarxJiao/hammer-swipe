@@ -44,7 +44,7 @@ function a() {
         el.childNodes[1].className = '';
         console.log(ev);
         initScale *=ev.scale;
-        el.childNodes[1].style.transform = 'scale('+initScale+',' + initScale+')';
+        el.childNodes[1].style.transform = 'scale('+ev.scale+',' + ev.scale+')';
         // el.className = '';
         // initScale *= 
         // transform.scale = initScale * ev.scale;
