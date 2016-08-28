@@ -59,67 +59,68 @@ function a() {
     var startImgX = 0;
     var startImgY = 0;
     function onPan(ev) {
-        // if (pinching) {
-        //     imgTransform.translate.x = 
-        //     return;
-        // }
-        if (imgTransform.scale>1 &&pinching==1) {
-            var img = ev.target;
-            if (ev.type == 'panstart') {
-                startImgX =  imgTransform.translate.x;
-                startImgY =  imgTransform.translate.y;
-                startX = ev.center.x;
-                startY = ev.center.y;
-                imgTransform.scale
-            }
-            if (startX * imgTransform.scale - startX <= ev.deltaX 
-                || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -ev.deltaX) {
-                pinching=0;
+        if (ev.target.localName == 'img') {
+            // if (pinching) {
+            //     imgTransform.translate.x = 
+            //     return;
+            // }
+            if (imgTransform.scale>1 &&pinching==1) {
+                var img = ev.target;
+                if (ev.type == 'panstart') {
+                    startImgX =  imgTransform.translate.x;
+                    startImgY =  imgTransform.translate.y;
+                    startX = ev.center.x;
+                    startY = ev.center.y;
+                    imgTransform.scale
+                }
+                if (startX * imgTransform.scale - startX <= ev.deltaX 
+                    || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -ev.deltaX) {
+                    pinching=0;
+                    return;
+                }
+                imgTransform.translate.x = ev.deltaX + startImgX;
+                // imgTransform.translate.y = ev.deltaY + startImgY;
+                // startImgX =imgTransform.translate.x;
+                // startImgY =imgTransform.translate.y;
+                updateImgTransform(ev.target);
                 return;
             }
-            imgTransform.translate.x = ev.deltaX + startImgX;
-            // imgTransform.translate.y = ev.deltaY + startImgY;
-            // startImgX =imgTransform.translate.x;
-            // startImgY =imgTransform.translate.y;
-            updateImgTransform(ev.target);
-            return;
-        }
-        console.log(ev);
-        el.childNodes[1].className = '';
-        if (ev.type == 'panend') {
-            console.log(transX);
-            if (ev.deltaX >50) {
-                if (index != 0){
-                    index -=1;
+            console.log(ev);
+            el.childNodes[1].className = '';
+            if (ev.type == 'panend') {
+                console.log(transX);
+                if (ev.deltaX >50) {
+                    if (index != 0){
+                        index -=1;
+                    }
+                    
                 }
-                
-            }
-            if (ev.deltaX < -50) {
-                if (index != 2) {
-                    index +=1;
+                if (ev.deltaX < -50) {
+                    if (index != 2) {
+                        index +=1;
+                    }
                 }
+                el.childNodes[1].className = 'animation';
+                ev.target.className = 'animation';
+            
+                holderTransform.translate.x = index*(-340);
+                updateElementTransform();
+                imgTransform = {
+                    translate: { x: 0, y: 0 },
+                    scale: 1,
+                    angle: 0,
+                    rx: 0,
+                    ry: 0,
+                    rz: 0
+                }; 
+                updateImgTransform(ev.target);
+                transX = 0;
             }
-            el.childNodes[1].className = 'animation';
-            ev.target.className = 'animation';
-           
-            holderTransform.translate.x = index*(-340);
-            updateElementTransform();
-            imgTransform = {
-                translate: { x: 0, y: 0 },
-                scale: 1,
-                angle: 0,
-                rx: 0,
-                ry: 0,
-                rz: 0
-            }; 
-            updateImgTransform(ev.target);
-            transX = 0;
+            else {
+                holderTransform.translate.x = ev.deltaX + index*(-340);
+                updateElementTransform()
+            }
         }
-        else {
-            holderTransform.translate.x = ev.deltaX + index*(-340);
-            updateElementTransform()
-        }
-        
     };
 
 
