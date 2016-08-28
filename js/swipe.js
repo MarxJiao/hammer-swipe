@@ -29,9 +29,6 @@ function a() {
         ];
 
         value = value.join(" ");
-        // el.textContent = value;
-
-
         holder.style.transform = value;
         console.log(holder.style.transform);
         ticking = false;
@@ -115,6 +112,7 @@ function a() {
     var initScale = 1;
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
+            pinching = 1;
             if(ev.type == 'pinchstart') {
                 initScale = imgTransform.scale || 1;
             }
