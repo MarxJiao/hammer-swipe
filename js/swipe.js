@@ -65,8 +65,8 @@ function a() {
         // }
         if (imgTransform.scale>1 &&pinching==1) {
             if (ev.type == 'panstart') {
-                startImgX =  imgTransform.translate.x || 0;
-                startImgY =  imgTransform.translate.y || 0;
+                startImgX =  imgTransform.translate.x;
+                startImgY =  imgTransform.translate.y;
             }
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
