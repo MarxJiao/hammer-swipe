@@ -72,8 +72,8 @@ function a() {
                 startY = ev.center.y;
                 imgTransform.scale
             }
-            if (startX * imgTransform.scale + startImgX<= ev.center.x 
-                || (img.offsetWidth - startX )*imgTransform.scale - startImgX >= (img.offsetWidth - ev.center.x)) {
+            if (startX * imgTransform.scale <= imgTransform.translate.x 
+                || (img.offsetWidth - startX )*imgTransform.scale - startImgX >= (img.offsetWidth - imgTransform.translate.x)) {
                 pinching=0;
                 return;
             }
