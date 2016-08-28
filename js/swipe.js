@@ -14,6 +14,7 @@ function a() {
             return;
         }
         if (initScale>1) {
+            alert(initScale);
             ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)';
             return;
         }
