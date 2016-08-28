@@ -78,6 +78,7 @@ function a() {
             if (ev.deltaX > 50) {
                 if (index != 0){
                     index -=1;
+                    
                 }
                 
             }
@@ -86,9 +87,12 @@ function a() {
                     index +=1;
                 }
             }
+            imgTransform.scale = 1;
             console.log(index)
             el.childNodes[1].className = 'animation';
-            el.childNodes[1].style.transform = 'translate('+index*(-340)+'px, 0px)';
+            holderTransform.translate.x = index*(-340)
+            updateElementTransform();
+            updateImgTransform(ev.target);
             transX = 0;
         }
         else {
