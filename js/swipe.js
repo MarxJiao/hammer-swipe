@@ -41,6 +41,7 @@ function a() {
     };
     var initScale = 1;
     function onPinch(ev) {
+        el.childNodes[1].className = '';
         console.log(ev);
         initScale *=ev.scale;
         el.childNodes[1].style.transform = 'scale('+initScale+',' + initScale+')';
