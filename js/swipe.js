@@ -55,7 +55,8 @@ function a() {
             pinching = 1;
             ev.target.className = '';
             console.log(ev);
-            initScale *=ev.scale;
+            initScale =ev.scale;
+            
             ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
             alet(initScale);
             if (ev.type == 'pinchend') {
