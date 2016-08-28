@@ -5,7 +5,7 @@ function a() {
     ham.add(new Hammer.Pan({ threshold: 1 }));
     ham.add(new Hammer.Pinch()).dropRecognizeWith(ham.get('pan'));
     ham.on('pan panend', onPan);
-    ham.on('pinch', onPinch);
+    ham.on('pinch pinchend', onPinch);
     var pinching = 0;
     var transX = 0;
     var index = 0;
@@ -57,6 +57,10 @@ function a() {
             console.log(ev);
             initScale *=ev.scale;
             ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
+
+            if( ev.type == 'pinchend') {
+                pinching = 0;
+            }
         }
         
         // el.className = '';
