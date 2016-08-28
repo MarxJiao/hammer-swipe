@@ -115,8 +115,6 @@ function a() {
     var initScale = 1;
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
-            
-            // ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
             if(ev.type == 'pinchstart') {
                 initScale = imgTransform.scale || 1;
             }
@@ -134,34 +132,17 @@ function a() {
                 },100);
             }
             else {
-
-                pinching = 1;
-            ev.target.className = '';
-            console.log(ev);
-            // initScale = ev.scale;
-            // alert(initScale);
-            // if (ev.type == 'pinchout'){
+                ev.target.className = '';
                 if(imgTransform.scale > 3){
                     imgTransform.scale = 3;
                 }
                 else {
                     imgTransform.scale = initScale* ev.scale;
-                // imgTransform.scale = ev.scale;
-            }
-            // }
-            // else if (ev.type == 'pinchin'){
+                }
                 if (imgTransform.scale <= 0.5){
                     imgTransform.scale = 0.5;
                 }
-            // }
-            // else {
-            //         imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
-            //     // imgTransform.scale = ev.scale;
-            // }
-            
-            updateImgTransform(ev.target);
-
-
+                updateImgTransform(ev.target);
             }
             
         }
