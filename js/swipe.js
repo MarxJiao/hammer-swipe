@@ -135,7 +135,7 @@ function a() {
                 }
             // }
             else {
-                    imgTransform.scale *= (ev.scale-1)/imgTransform.scale + imgTransform.scale;
+                    imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
                 // imgTransform.scale = ev.scale;
             }
             
