@@ -121,14 +121,10 @@ function a() {
             // initScale = ev.scale;
             // alert(initScale);
             if(imgTransform.scale > 3){
-                if(ev.type == 'pinchout'){
-                    imgTransform.scale = 3;
-                }   
+                imgTransform.scale = 3;
             }
             else if (imgTransform.scale <= 0.5){
-                if(ev.type == 'pinchin'){
-                    imgTransform.scale = 0.5;
-                }
+                imgTransform.scale = 0.5;
             }
             else {
                 imgTransform.scale *= ev.scale;
