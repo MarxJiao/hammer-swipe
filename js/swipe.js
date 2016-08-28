@@ -1,5 +1,6 @@
 function a() {
     var el = document.getElementById('iSlider');
+    var holder = document.getElementById("holder");
     console.log(el.childNodes[1]);
     var ham = new Hammer.Manager(el);
     ham.add(new Hammer.Pan({ threshold: 1 }));
@@ -31,7 +32,8 @@ function a() {
         // el.textContent = value;
 
 
-        el.childNodes[1].style.transform = value;
+        holder.style.transform = value;
+        console.log(holder.style.transform);
         ticking = false;
     }
 
