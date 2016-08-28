@@ -115,6 +115,8 @@ function a() {
             console.log(ev);
             initScale = ev.scale;
             // alert(initScale);
+            imgTransform.scale *= ev.scale;
+            updateImgTransform(ev.target);
             ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
             
             if (ev.type == 'pinchend') {
