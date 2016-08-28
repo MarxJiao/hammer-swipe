@@ -129,10 +129,11 @@ function a() {
                 }
                 setTimeout(function () {
                     pinching = 0;
+                    ev.target.className = '';
                 },100);
             }
             else {
-                ev.target.className = '';
+                
                 if(imgTransform.scale > 3){
                     imgTransform.scale = 3;
                 }
