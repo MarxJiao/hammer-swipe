@@ -118,22 +118,18 @@ function a() {
             if(ev.type == 'pinchstart') {
                 initScale = imgTransform.scale || 1;
             }
-            if (ev.type == 'pinchend') {
-                if(imgTransform.scale > 3){
-                    imgTransform.scale = 3;
-                }
-                if (imgTransform.scale < 1) {
-                    ev.target.className = 'animation';
-                    imgTransform.scale = 1;
-                    updateImgTransform(ev.target);
-                }
-                setTimeout(function () {
-                    pinching = 0;
-                    ev.target.className = '';
-                },100);
-            }
-            else {
+            // if (ev.type == 'pinchend') {
+            //     if(imgTransform.scale > 3){
+            //         imgTransform.scale = 3;
+            //     }
+            //     if (imgTransform.scale < 1) {
+            //         ev.target.className = 'animation';
+            //         imgTransform.scale = 1;
+            //         updateImgTransform(ev.target);
+            //     }
                 
+            // }
+            else {
                 if(imgTransform.scale > 3){
                     imgTransform.scale = 3;
                 }
@@ -145,7 +141,10 @@ function a() {
                 }
                 updateImgTransform(ev.target);
             }
-            
+            setTimeout(function () {
+                pinching = 0;
+                ev.target.className = '';
+            },100);
         }
     }
 }
