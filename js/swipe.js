@@ -13,6 +13,9 @@ function a() {
         if (pinching) {
             return;
         }
+        if (initScale>1) {
+            ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)'
+        }
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
             console.log(transX);
