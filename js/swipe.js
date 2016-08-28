@@ -10,11 +10,12 @@ function a() {
     var transX = 0;
     var index = 0;
     function onPan(ev) {
-        if (pinching) {
-            return;
-        }
+        
         if (initScale>1) {
             ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)';
+            return;
+        }
+        if (pinching) {
             return;
         }
         el.childNodes[1].className = '';
