@@ -98,10 +98,13 @@ function a() {
                     }
                     
                 }
-                if (ev.deltaX < -50) {
+                else if (ev.deltaX < -50) {
                     if (index != 2) {
                         index +=1;
                     }
+                }
+                else {
+                    return;
                 }
                 el.childNodes[1].className = 'animation';
                 ev.target.className = 'animation';
