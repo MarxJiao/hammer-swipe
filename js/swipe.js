@@ -56,9 +56,9 @@ function a() {
             ev.target.className = '';
             console.log(ev);
             initScale =ev.scale;
-            
-            ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
             alet(initScale);
+            ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
+            
             if (ev.type == 'pinchend') {
                 if (initScale < 1) {
                     ev.target.className = 'animation';
