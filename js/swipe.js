@@ -75,13 +75,13 @@ function a() {
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
             console.log(transX);
-            if (ev.deltaX >100) {
+            if (ev.deltaX >50) {
                 if (index != 0){
                     index -=1;
                 }
                 
             }
-            if (ev.deltaX < -100) {
+            if (ev.deltaX < -50) {
                 if (index != 2) {
                     index +=1;
                 }
@@ -93,7 +93,14 @@ function a() {
 
             updateElementTransform();
 
-            imgTransform.scale = 1;
+            imgTransform = {
+                translate: { x: 0, y: 0 },
+                scale: 1,
+                angle: 0,
+                rx: 0,
+                ry: 0,
+                rz: 0
+            }; 
             updateImgTransform(ev.target);
             transX = 0;
         }
