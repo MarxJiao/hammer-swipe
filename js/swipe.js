@@ -124,6 +124,10 @@ function a() {
                 if(imgTransform.scale >= 3){
                     imgTransform.scale = 3;
                 }
+                else {
+                    imgTransform.scale *= ev.scale;
+                // imgTransform.scale = ev.scale;
+            }
             // }
             // else if (ev.type == 'pinchin'){
                 if (imgTransform.scale <= 0.5){
