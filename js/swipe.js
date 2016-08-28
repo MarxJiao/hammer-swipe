@@ -29,8 +29,8 @@ function a() {
 
         value = value.join(" ");
         // el.textContent = value;
-        el.childNodes[1].style.webkitTransform = value;
-        el.childNodes[1].style.mozTransform = value;
+
+
         el.childNodes[1].style.transform = value;
         ticking = false;
     }
