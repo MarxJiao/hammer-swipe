@@ -90,6 +90,7 @@ function a() {
             imgTransform.scale = 1;
             console.log(index)
             el.childNodes[1].className = 'animation';
+            ev.target.className = 'animation';
             holderTransform.translate.x = index*(-340)
             updateElementTransform();
             updateImgTransform(ev.target);
