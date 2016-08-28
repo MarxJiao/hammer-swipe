@@ -66,8 +66,8 @@ function a() {
         if (imgTransform.scale>1) {
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
-            startImgX =imgTransform.translate.x;
-            startImgY =imgTransform.translate.y;
+            // startImgX =imgTransform.translate.x;
+            // startImgY =imgTransform.translate.y;
             updateImgTransform(ev.target);
             return;
         }
