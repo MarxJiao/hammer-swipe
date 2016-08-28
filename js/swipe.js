@@ -5,7 +5,7 @@ function a() {
     var ham = new Hammer.Manager(el);
     ham.add(new Hammer.Pan({ threshold: 1 }));
     ham.add(new Hammer.Pinch()).dropRecognizeWith(ham.get('pan'));
-    ham.on('panstart pan panend', onPan);
+    ham.on('panstart panmove panend', onPan);
     ham.on('pinch pinchstart pinchend', onPinch);
     var pinching = 0;
     var transX = 0;
@@ -68,6 +68,12 @@ function a() {
                 alert(111);
                 startImgX =  imgTransform.translate.x;
                 startImgY =  imgTransform.translate.y;
+                startX = ev.center.x;
+                startY = ev.center.y;
+                imgTransform.scale
+            }
+            if (startX * imgTransform.scale >= ev.center.x) {
+                pinching=0;
             }
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
