@@ -75,7 +75,10 @@ function a() {
                 }
                 if (startX * imgTransform.scale - startX <= imgTransform.translate.x 
                     || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -imgTransform.translate.x) {
+                    
+                    ev.deltaX =0;
                     pinching=0;
+
                     return;
                 }
                 imgTransform.translate.x = ev.deltaX + startImgX;
