@@ -91,7 +91,7 @@ function a() {
             console.log(index)
             el.childNodes[1].className = 'animation';
             ev.target.className = 'animation';
-            holderTransform.translate.x = index*(-340)
+            holderTransform.translate.x = index*(-340);
             updateElementTransform();
             imgTransform.scale = 1;
             updateImgTransform(ev.target);
@@ -99,9 +99,7 @@ function a() {
         }
         else {
             // console.log(ev);
-            console.log(ev);
-            var a = ev.deltaX+index*(-340);
-            holderTransform.translate.x = a;
+            holderTransform.translate.x += ev.deltaX;
             updateElementTransform()
             // el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
             transX = ev.deltaX;
