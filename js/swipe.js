@@ -120,11 +120,15 @@ function a() {
             console.log(ev);
             // initScale = ev.scale;
             // alert(initScale);
-            if(imgTransform.scale > 3){
-                imgTransform.scale = 3;
+            if (ev.type == 'pinchout'){
+                if(imgTransform.scale > 3){
+                    imgTransform.scale = 3;
+                }
             }
-            else if (imgTransform.scale <= 0.5){
-                imgTransform.scale = 0.5;
+            else if (ev.type == 'pinchin'){
+                if (imgTransform.scale <= 0.5){
+                    imgTransform.scale = 0.5;
+                }
             }
             else {
                 imgTransform.scale *= ev.scale;
