@@ -76,7 +76,7 @@ function a() {
                 return;
             }
             imgTransform.translate.x = ev.deltaX + startImgX;
-            imgTransform.translate.y = ev.deltaY + startImgY;
+            // imgTransform.translate.y = ev.deltaY + startImgY;
             // startImgX =imgTransform.translate.x;
             // startImgY =imgTransform.translate.y;
             updateImgTransform(ev.target);
