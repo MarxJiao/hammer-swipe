@@ -87,12 +87,13 @@ function a() {
                     index +=1;
                 }
             }
-            imgTransform.scale = 1;
+            
             console.log(index)
             el.childNodes[1].className = 'animation';
             ev.target.className = 'animation';
             holderTransform.translate.x = index*(-340)
             updateElementTransform();
+            imgTransform.scale = 1;
             updateImgTransform(ev.target);
             transX = 0;
         }
