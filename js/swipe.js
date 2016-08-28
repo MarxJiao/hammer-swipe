@@ -3,7 +3,7 @@ function a() {
     console.log(el.childNodes[1]);
     var ham = new Hammer.Manager(el);
     ham.add(new Hammer.Pan({ threshold: 1 }));
-    ham.add(new Hammer.Pinch());
+    ham.add(new Hammer.Pinch()).recognizeWith(mc.get('pan'));
     ham.on('pan panend', onPan);
     ham.on('pinch', onPinch);
     var transX = 0;
