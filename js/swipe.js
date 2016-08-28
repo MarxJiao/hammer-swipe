@@ -56,9 +56,9 @@ function a() {
             pinching = 1;
             ev.target.className = '';
             console.log(ev);
-            initScale =ev.scale;
+            initScale = ev.scale;
             // alert(initScale);
-            ev.target.style.transform = 'scale('+ev.scale+',' + ev.scale+')';
+            ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
             
             if (ev.type == 'pinchend') {
                 if (initScale < 1) {
@@ -69,8 +69,9 @@ function a() {
                 setTimeout(function () {
                     pinching = 0;
                 },10);
-                
+                initScale = ev.scale;
             }
+            
         }
     }
 }
