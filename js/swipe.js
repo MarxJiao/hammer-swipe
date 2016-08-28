@@ -63,7 +63,7 @@ function a() {
         //     imgTransform.translate.x = 
         //     return;
         // }
-        if (imgTransform.scale>1) {
+        if (imgTransform.scale>1 &&pinching==1) {
             imgTransform.translate.x = ev.deltaX + startImgX;
             imgTransform.translate.y = ev.deltaY + startImgY;
             // startImgX =imgTransform.translate.x;
