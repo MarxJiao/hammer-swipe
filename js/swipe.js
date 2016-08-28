@@ -9,12 +9,67 @@ function a() {
     var pinching = 0;
     var transX = 0;
     var index = 0;
+
+    var holderTransform = {
+        translate: { x: 0, y: 0 },
+        scale: 1,
+        angle: 0,
+        rx: 0,
+        ry: 0,
+        rz: 0
+    };
+       
+
+    function updateElementTransform() {
+        var value = [
+            'translate3d(' + holderTransform.translate.x + 'px, ' + holderTransform.translate.y + 'px, 0)',
+            'scale(' + holderTransform.scale + ', ' + holderTransform.scale + ')',
+            'rotate3d('+ holderTransform.rx +','+ holderTransform.ry +','+ holderTransform.rz +','+  holderTransform.angle + 'deg)'
+        ];
+
+        value = value.join(" ");
+        el.textContent = value;
+        el.style.webkitTransform = value;
+        el.style.mozTransform = value;
+        el.style.transform = value;
+        ticking = false;
+    }
+
+    var imgTransform = {
+        translate: { x: 0, y: 0 },
+        scale: 1,
+        angle: 0,
+        rx: 0,
+        ry: 0,
+        rz: 0
+    }; 
+
+    function updateImgTransform() {
+        var value = [
+            'translate3d(' + imgTransform.translate.x + 'px, ' + imgTransform.translate.y + 'px, 0)',
+            'scale(' + imgTransform.scale + ', ' + imgTransform.scale + ')',
+            'rotate3d('+ imgTransform.rx +','+ imgTransform.ry +','+ imgTransform.rz +','+  imgTransform.angle + 'deg)'
+        ];
+
+        value = value.join(" ");
+        el.textContent = value;
+        el.style.webkitTransform = value;
+        el.style.mozTransform = value;
+        el.style.transform = value;
+        ticking = false;
+    }
+    var startImgX = 0;
+    var startImgY = 0
     function onPan(ev) {
         if (pinching) {
             return;
         }
         if (initScale>1) {
-            ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)';
+            imgTransform.translate.x = ev.deltaX + startImgX;
+            imgTransform.translate.y = ev.deltaY + startImgY;
+            startImgX =imgTransform.translate.x;
+            startImgY =imgTransform.translate.y;
+            updateImgTransform();
             return;
         }
         
