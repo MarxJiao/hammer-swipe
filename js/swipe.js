@@ -125,7 +125,7 @@ function a() {
                     imgTransform.scale = 3;
                 }
                 else {
-                    imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
+                    imgTransform.scale = ev.scale;
                 // imgTransform.scale = ev.scale;
             }
             // }
