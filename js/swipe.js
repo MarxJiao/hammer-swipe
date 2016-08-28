@@ -8,7 +8,6 @@ function a() {
     ham.on('pinch', onPinch);
     var transX = 0;
     var index = 0;
-
     function onPan(ev) {
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
@@ -39,6 +38,10 @@ function a() {
         }
         
     };
+
+
+    var img = document.querySelectorAll('img')[0];
+    var imgham = new Hammer.Manager(el);
     var initScale = 1;
     function onPinch(ev) {
         el.childNodes[1].className = '';
