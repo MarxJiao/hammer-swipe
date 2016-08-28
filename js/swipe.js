@@ -78,7 +78,6 @@ function a() {
             if (ev.deltaX >100) {
                 if (index != 0){
                     index -=1;
-                    
                 }
                 
             }
@@ -87,13 +86,12 @@ function a() {
                     index +=1;
                 }
             }
-            
-            console.log(index)
             el.childNodes[1].className = 'animation';
             ev.target.className = 'animation';
+            alert(holderTransform.translate.x);
             holderTransform.translate.x = index*(-340);
             updateElementTransform();
-            alert(index);
+            alert(holderTransform.translate.x);
             imgTransform.scale = 1;
             updateImgTransform(ev.target);
             transX = 0;
