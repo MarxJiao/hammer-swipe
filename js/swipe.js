@@ -42,7 +42,8 @@ function a() {
     var initScale = 1;
     function onPinch(ev) {
         console.log(ev);
-
+        initScale *=ev.scale;
+        el.childNodes[1].style.transform = 'scale('+initScale+',' + initScale+')';
         // el.className = '';
         // initScale *= 
         // transform.scale = initScale * ev.scale;
