@@ -44,7 +44,7 @@ function a() {
         rz: 0
     }; 
 
-    function updateImgTransform(el) {
+    function updateImgTransform(img) {
         var value = [
             'translate3d(' + imgTransform.translate.x + 'px, ' + imgTransform.translate.y + 'px, 0)',
             'scale(' + imgTransform.scale + ', ' + imgTransform.scale + ')',
@@ -52,10 +52,9 @@ function a() {
         ];
 
         value = value.join(" ");
-        el.textContent = value;
-        el.style.webkitTransform = value;
-        el.style.mozTransform = value;
-        el.style.transform = value;
+        img.style.webkitTransform = value;
+        img.style.mozTransform = value;
+        img.style.transform = value;
         ticking = false;
     }
     var startImgX = 0;
