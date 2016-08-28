@@ -64,6 +64,7 @@ function a() {
         //     return;
         // }
         if (imgTransform.scale>1 &&pinching==1) {
+            var img = ev.target;
             if (ev.type == 'panstart') {
                 startImgX =  imgTransform.translate.x;
                 startImgY =  imgTransform.translate.y;
@@ -71,7 +72,8 @@ function a() {
                 startY = ev.center.y;
                 imgTransform.scale
             }
-            if (startX * imgTransform.scale <= ev.center.x) {
+            if (startX * imgTransform.scale <= ev.center.x 
+                || (img.offsetWidth - startX )*imgTransform.scale > (img.offsetWidth - ev.center.x)) {
                 pinching=0;
                 return;
             }
