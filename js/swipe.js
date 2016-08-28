@@ -72,8 +72,8 @@ function a() {
                 startY = ev.center.y;
                 imgTransform.scale
             }
-            if (startX * imgTransform.scale - startX <= ev.deltaX 
-                || (img.offsetWidth - startX )*(imgTransform.scale - 1) >= -ev.deltaX) {
+            if (startX * imgTransform.scale - startX >= ev.deltaX 
+                || (img.offsetWidth - startX )*(imgTransform.scale - 1) <= -ev.deltaX) {
                 pinching=0;
                 return;
             }
