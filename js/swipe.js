@@ -115,7 +115,22 @@ function a() {
     var initScale = 1;
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
-            pinching = 1;
+            
+            // ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
+            
+            if (ev.type == 'pinchend') {
+                if (imgTransform.scale < 1) {
+                    ev.target.className = 'animation';
+                    imgTransform.scale = 1;
+                    updateImgTransform(ev.target);
+                }
+                setTimeout(function () {
+                    pinching = 0;
+                },100);
+            }
+            else {
+
+                pinching = 1;
             ev.target.className = '';
             console.log(ev);
             // initScale = ev.scale;
@@ -140,17 +155,8 @@ function a() {
             // }
             
             updateImgTransform(ev.target);
-            // ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
-            
-            if (ev.type == 'pinchend') {
-                if (imgTransform.scale < 1) {
-                    ev.target.className = 'animation';
-                    imgTransform.scale = 1;
-                    updateImgTransform(ev.target);
-                }
-                setTimeout(function () {
-                    pinching = 0;
-                },100);
+
+
             }
             
         }
