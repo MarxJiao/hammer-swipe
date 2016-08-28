@@ -61,7 +61,7 @@ function a() {
             if( ev.type == 'pinchend') {
                 setTimeout(function () {
                     pinching = 0;
-                },0);
+                },10);
                 
             }
         }
