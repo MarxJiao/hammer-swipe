@@ -121,7 +121,7 @@ function a() {
             // initScale = ev.scale;
             // alert(initScale);
             if (ev.type == 'pinchout'){
-                if(imgTransform.scale > 3){
+                if(imgTransform.scale >= 3){
                     imgTransform.scale = 3;
                 }
             }
