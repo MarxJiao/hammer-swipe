@@ -75,14 +75,14 @@ function a() {
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
             console.log(transX);
-            if (ev.deltaX > 50) {
+            if (ev.deltaX >100) {
                 if (index != 0){
                     index -=1;
                     
                 }
                 
             }
-            if (ev.deltaX < -50) {
+            if (ev.deltaX < -100) {
                 if (index != 2) {
                     index +=1;
                 }
@@ -93,18 +93,14 @@ function a() {
             ev.target.className = 'animation';
             holderTransform.translate.x = index*(-340);
             updateElementTransform();
+            alert(index);
             imgTransform.scale = 1;
             updateImgTransform(ev.target);
             transX = 0;
         }
         else {
-            // console.log(ev);
-            console.log(ev);
             holderTransform.translate.x += ev.deltaX;
             updateElementTransform()
-            // el.childNodes[1].style.transform = 'translate('+a+'px, 0px)';
-            transX = ev.deltaX;
-
         }
         
     };
