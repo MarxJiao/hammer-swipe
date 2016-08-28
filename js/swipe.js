@@ -88,8 +88,8 @@ function a() {
             }
             el.childNodes[1].className = 'animation';
             ev.target.className = 'animation';
-            alert(ev.deltaX);
-            alert(holderTransform.translate.x);
+            alert('delta:'+ev.deltaX);
+            alert('index:'+index);
             holderTransform.translate.x = index*(-340);
             alert(holderTransform.translate.x);
             updateElementTransform();
