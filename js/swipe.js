@@ -10,14 +10,14 @@ function a() {
     var transX = 0;
     var index = 0;
     function onPan(ev) {
-        
+        if (pinching) {
+            return;
+        }
         if (initScale>1) {
             ev.target.style.transform = 'translate('+ev.deltaX+'px, ' + ev.deltaY+'px)';
             return;
         }
-        if (pinching) {
-            return;
-        }
+        
         el.childNodes[1].className = '';
         if (ev.type == 'panend') {
             console.log(transX);
@@ -49,11 +49,6 @@ function a() {
     };
 
 
-    // var img = document.querySelectorAll('img')[0];
-    // var imgham = new Hammer.Manager(img);
-    // imgham.add(new Hammer.Pan({ threshold: 1 }));
-    // imgham.add(new Hammer.Pinch()).dropRecognizeWith(imgham.get('pan'));
-    // imgham.on('pinch', onPinch);
     var initScale = 1;
     function onPinch(ev) {
         if (ev.target.localName == 'img') {
