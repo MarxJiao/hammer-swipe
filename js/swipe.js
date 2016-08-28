@@ -44,7 +44,7 @@ function a() {
         rz: 0
     }; 
 
-    function updateImgTransform() {
+    function updateImgTransform(el) {
         var value = [
             'translate3d(' + imgTransform.translate.x + 'px, ' + imgTransform.translate.y + 'px, 0)',
             'scale(' + imgTransform.scale + ', ' + imgTransform.scale + ')',
@@ -59,7 +59,7 @@ function a() {
         ticking = false;
     }
     var startImgX = 0;
-    var startImgY = 0
+    var startImgY = 0;
     function onPan(ev) {
         if (pinching) {
             return;
@@ -69,7 +69,7 @@ function a() {
             imgTransform.translate.y = ev.deltaY + startImgY;
             startImgX =imgTransform.translate.x;
             startImgY =imgTransform.translate.y;
-            updateImgTransform();
+            updateImgTransform(ev.target);
             return;
         }
         
