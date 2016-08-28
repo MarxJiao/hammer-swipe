@@ -105,6 +105,10 @@ function a() {
                     }
                 }
                 if (_index == index) {
+                    if (index == 0 || index == 2) {
+                        holderTransform.translate.x = index*(-340);
+                        updateElementTransform();
+                    }
                     return;
                 }
                 el.childNodes[1].className = 'animation';
