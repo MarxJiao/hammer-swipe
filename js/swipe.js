@@ -40,7 +40,8 @@ function a() {
 
 
     var img = document.querySelectorAll('img')[0];
-    var imgham = new Hammer.Manager(el);
+    var imgham = new Hammer.Manager(img);
+    imgham.add(new Hammer.Pan({ threshold: 1 }));
     imgham.add(new Hammer.Pinch()).dropRecognizeWith(imgham.get('pan'));
     imgham.on('pinch', onPinch);
     var initScale = 1;
