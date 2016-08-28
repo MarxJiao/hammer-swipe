@@ -131,7 +131,7 @@ function a() {
                 }
             }
             else {
-                    imgTransform.scale = (ev.scale)/imgTransform.scale +1;
+                    imgTransform.scale = (ev.scale)/imgTransform.scale + imgTransform.scale;
                 // imgTransform.scale = ev.scale;
             }
             
