@@ -73,7 +73,7 @@ function a() {
                 imgTransform.scale
             }
             if (startX * imgTransform.scale <= ev.center.x 
-                || (img.offsetWidth - startX )*imgTransform.scale > (img.offsetWidth - ev.center.x)) {
+                || (img.offsetWidth - startX )*imgTransform.scale >= (img.offsetWidth - ev.center.x)) {
                 pinching=0;
                 return;
             }
