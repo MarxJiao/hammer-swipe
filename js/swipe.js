@@ -125,7 +125,7 @@ function a() {
                     imgTransform.scale = 3;
                 }
                 else {
-                    imgTransform.scale *= ev.scale;
+                    imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
                 // imgTransform.scale = ev.scale;
             }
             // }
@@ -134,10 +134,10 @@ function a() {
                     imgTransform.scale = 0.5;
                 }
             // }
-            else {
-                    imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
-                // imgTransform.scale = ev.scale;
-            }
+            // else {
+            //         imgTransform.scale = (ev.scale-1)/imgTransform.scale + imgTransform.scale;
+            //     // imgTransform.scale = ev.scale;
+            // }
             
             updateImgTransform(ev.target);
             // ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
