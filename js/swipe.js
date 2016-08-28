@@ -90,6 +90,7 @@ function a() {
             ev.target.className = 'animation';
             alert(holderTransform.translate.x);
             holderTransform.translate.x = index*(-340);
+            alert(holderTransform.translate.x);
             updateElementTransform();
             alert(holderTransform.translate.x);
             imgTransform.scale = 1;
