@@ -119,6 +119,9 @@ function a() {
             // ev.target.style.transform = 'scale('+ev.scale*initScale+',' + ev.scale*initScale+')';
             
             if (ev.type == 'pinchend') {
+                if(imgTransform.scale > 3){
+                    imgTransform.scale = 3;
+                }
                 if (imgTransform.scale < 1) {
                     ev.target.className = 'animation';
                     imgTransform.scale = 1;
