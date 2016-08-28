@@ -120,14 +120,14 @@ function a() {
             console.log(ev);
             // initScale = ev.scale;
             // alert(initScale);
-            if(ev.scale >= 3){
+            if(imgTransform.scale >= 3){
                 imgTransform.scale = 3;
             }
-            else if (ev.scale <= 0.5){
+            else if (imgTransform.scale <= 0.5){
                 imgTransform.scale = 0.5;
             }
             else {
-                imgTransform.scale = ev.scale;
+                imgTransform.scale *= ev.scale;
             }
             
             updateImgTransform(ev.target);
