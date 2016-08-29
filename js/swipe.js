@@ -6,7 +6,7 @@ function a() {
     ham.add(new Hammer.Pan({ threshold: 1 }));
     ham.add(new Hammer.Pinch()).dropRecognizeWith(ham.get('pan'));
     ham.on('panstart panmove panend', onPan);
-    ham.on('pinch pinchstart pinchend', onPinch);
+    ham.on('pinchstart pinchin pinchout pinchend', onPinch);
     var pinching = 0;
     var transX = 0;
     var index = 0;
@@ -152,7 +152,7 @@ function a() {
             }
             else {
                 if(imgTransform.scale > 3){
-                    imgTransform.scale = 3;
+                    imgTransform.scale = 2.999;
                 }
                 else {
                     imgTransform.scale = initScale* ev.scale;
